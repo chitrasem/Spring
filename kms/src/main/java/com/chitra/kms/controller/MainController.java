@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
  
 
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,14 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
  
 @Controller
-public class MainController {
-    
-    @RequestMapping(value="main", method = RequestMethod.GET)
-    public String mainPage(ModelMap model) {
-    	model.addAttribute("greeting", "Hi, Welcome to mysite. ");
-    	return "lms_adm_001";
+public class MainController { 
+	
+
+	
+    @RequestMapping(value="/home", method = RequestMethod.GET)
+    public String homePage(ModelMap model) {
+    	model.addAttribute("user", getPrincipal());
+        return "/pages/welcome";
     }
- 
+    
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(ModelMap model) {
         model.addAttribute("user", getPrincipal());

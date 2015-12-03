@@ -35,9 +35,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
   
       http.authorizeRequests()
-        .antMatchers("/", "/home").permitAll() 
-        .antMatchers("/admin/**").access("hasRole('ADMIN') or hasRole('DBA')")
-        .antMatchers("/db/**").access("hasRole('DBA')")
+        .antMatchers("/", "/home").permitAll()
+        .antMatchers("/account/**").access("hasRole('ACCOUNTANT') or hasRole('DIRECTOR')")
+        .antMatchers("/admin/**").access("hasRole('TEACHER') or hasRole('DIRECTOR')")
+        .antMatchers("/db/**").access("hasRole('DIRECTOR')")
+        
         .and().formLogin().loginPage("/login").successHandler(customSuccessHandler)
         .usernameParameter("ssoId").passwordParameter("password")
         .and().csrf()

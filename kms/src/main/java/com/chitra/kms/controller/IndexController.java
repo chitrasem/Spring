@@ -1,9 +1,7 @@
 package com.chitra.kms.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -14,8 +12,9 @@ public class IndexController {
 		return new ModelAndView("redirect:home");		
 	}
 	
-    @RequestMapping(value="/home", method = RequestMethod.GET)
-    public String homePage(ModelMap model) {
-        return "/pages/welcome";
-    }
+	@RequestMapping(value="/test")
+	public String showTest(){
+		
+		return "/admin/test";
+	}
 }
