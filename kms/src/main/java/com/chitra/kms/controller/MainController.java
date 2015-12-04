@@ -1,21 +1,37 @@
 package com.chitra.kms.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+import javax.validation.Valid;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.chitra.kms.entity.User;
+import com.chitra.kms.entity.UserProfile;
+import com.chitra.kms.service.UserProfileService;
+import com.chitra.kms.service.UserService;
  
 @Controller
 public class MainController { 
+	
+	@Autowired
+	UserService userService;
+	
+	@Autowired
+	UserProfileService userProfileService;
 	
 
 	
@@ -56,6 +72,34 @@ public class MainController {
         model.addAttribute("user", getPrincipal());
         return "accessDenied";
     }
+    
+    @RequestMapping(value="/newUser" , method = RequestMethod.GET)
+    public String newRegistration(ModelMap model){
+    	User user = new User();
+    	model.addAttribute("user",user);
+    	return "newuser"; 
+    }
+    
+    @ResponseBody
+    @RequestMapping(value="/newUser", method = RequestMethod.POST)
+    public String saveRegistration(@Valid User user,
+    		BindingResult result, ModelMap model){
+    	if(result.hasErrors()){
+    		System.out.println("There are errors");
+    		return "newuser";    		
+    	}
+    	userService.save(user);
+    	//Checking profile
+    	if(user.getUserProfiles()!=null){
+    		for(UserProfile profile : user.getUserProfiles()){
+    			System.out.println("Profile"+ profile.getType());;
+    		}
+    	}
+    	model.addAttribute("success", "User" + user.getFirstName());
+    	
+    	return "registerationsuccess";
+    }
+    
      
     private String getPrincipal(){
         String userName = null;
@@ -68,4 +112,10 @@ public class MainController {
         }
         return userName;
     }
+    
+    @ModelAttribute("role")
+    public List<UserProfile> initializeProfiles(){
+    	return userProfileService.findAll();
+    }
+    
 }

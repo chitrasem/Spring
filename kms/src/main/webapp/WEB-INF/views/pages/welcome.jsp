@@ -22,7 +22,7 @@
 
 	<br/>
 	<div>
-		<sec:authorize access="hasRole('DIRECTOR') and hasRole('DBA')">
+		<sec:authorize access="hasRole('DIRECTOR') or hasRole('DBA')">
 			<label><a href="#">Start backup</a> | This part is visible only to one who is both ADMIN & DBA</label>
 		</sec:authorize>
 	</div>
