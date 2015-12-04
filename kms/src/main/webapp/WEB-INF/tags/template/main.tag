@@ -908,7 +908,7 @@
 								<i class="ace-icon fa fa-home home-icon"></i>
 								<a href="#">Home</a>
 							</li>
-							<li class="active">Dashboard</li>
+							<li class="active"><c:out value="${fn:trim(bodyTitle)}" />Dashboard</li>
 						</ul><!-- /.breadcrumb -->
 
 						<div class="nav-search" id="nav-search">
@@ -1002,6 +1002,9 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
+								<c:out value="${fn:trim(bodyTitle)}" />
+								
+                       			<jsp:doBody />
 								
 
 								
@@ -1059,8 +1062,7 @@
                         <jsp:invoke fragment="navigationContent" />
                     </td>
                     <td class="contentCell">
-                        <h2><c:out value="${fn:trim(bodyTitle)}" /></h2>
-                        <jsp:doBody />
+                        
                     </td>
                 </tr>
             </tbody>
