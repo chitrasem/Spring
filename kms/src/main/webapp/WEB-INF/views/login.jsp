@@ -95,7 +95,7 @@
 
 													<div class="clearfix">
 														<label class="inline">
-															<input type="checkbox" class="ace" />
+															<input type="checkbox" id="rememberme" name="remember-me" class="ace" />
 															<span class="lbl"> Remember Me</span>
 														</label>
 
@@ -245,7 +245,7 @@
 
 													<div class="clearfix">
 														<button type="reset" class="width-30 pull-left btn btn-sm">
-															<i class="ace-icon fa fa-refresh"></i>
+				remember											<i class="ace-icon fa fa-refresh"></i>
 															<span class="bigger-110">Reset</span>
 														</button>
 

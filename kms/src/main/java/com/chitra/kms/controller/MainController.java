@@ -77,6 +77,7 @@ public class MainController {
     public String newRegistration(ModelMap model){
     	User user = new User();
     	model.addAttribute("user",user);
+    	model.addAttribute("roles",initializeProfiles());
     	return "newuser"; 
     }
     

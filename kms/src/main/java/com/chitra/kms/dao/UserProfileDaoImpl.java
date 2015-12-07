@@ -30,7 +30,6 @@ public class UserProfileDaoImpl extends AbstractDao<Integer, UserProfile> implem
 	}
 
 	public UserProfile findById(int id) {
-		// TODO Auto-generated method stub
 		return getByKey(id);
 	}
 
