@@ -14,8 +14,18 @@ public class StudentDaoImpl extends AbstractDao<Integer, Student> implements Stu
 
 	@SuppressWarnings("unchecked")
 	public List<Student> findAll() {
-		Criteria crit = createEntityCriteria();
+		
+		/*Criteria crit = createEntityCriteria();
 		crit.addOrder(Order.asc("firstName"));
+		
+		
+		return (List<Student>)crit.list();*/
+		
+		Criteria crit = getSession().createCriteria(Student.class);
+		crit.addOrder(Order.desc("firstName"));
+		//crit.add(Restrictions.eq("firstName", "Bota"));
+		crit.setFirstResult(1);
+		crit.setMaxResults(2);
 		
 		return (List<Student>)crit.list();
 	}

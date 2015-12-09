@@ -11,10 +11,4 @@ public class IndexController {
 	public ModelAndView showHome(){		
 		return new ModelAndView("redirect:home");		
 	}
-	
-	@RequestMapping(value="/test")
-	public String showTest(){
-		
-		return "/admin/test";
-	}
 }

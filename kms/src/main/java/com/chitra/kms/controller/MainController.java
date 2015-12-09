@@ -12,6 +12,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,6 +24,7 @@ import com.chitra.kms.entity.User;
 import com.chitra.kms.entity.UserProfile;
 import com.chitra.kms.service.UserProfileService;
 import com.chitra.kms.service.UserService;
+import com.chitra.kms.utils.SSOIdUtil;
  
 @Controller
 public class MainController { 
@@ -33,11 +35,17 @@ public class MainController {
 	@Autowired
 	UserProfileService userProfileService;
 	
-
 	
+	SSOIdUtil sSOIdUtil = new SSOIdUtil();
+
+	@RequestMapping(value="/admin/students", method = RequestMethod.GET)
+	public String showStudent(Model m){
+		m.addAttribute("user", sSOIdUtil.getPrincipal());
+		return "/admin/student";
+	}
     @RequestMapping(value="/home", method = RequestMethod.GET)
     public String homePage(ModelMap model) {
-    	model.addAttribute("user", getPrincipal());
+    	model.addAttribute("user", sSOIdUtil.getPrincipal());
         return "/pages/welcome";
     }
     
@@ -69,7 +77,7 @@ public class MainController {
  
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
-        model.addAttribute("user", getPrincipal());
+        model.addAttribute("user", sSOIdUtil.getPrincipal());
         return "accessDenied";
     }
     
