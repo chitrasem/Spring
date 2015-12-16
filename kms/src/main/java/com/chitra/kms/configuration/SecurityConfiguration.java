@@ -59,17 +59,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
   
+      http.exceptionHandling().accessDeniedPage("/Access_Denied");
+      
       http.authorizeRequests()
-        .antMatchers("/", "/home").permitAll()
-        .antMatchers("/account/**").access("hasRole('ACCOUNTANT') or hasRole('DIRECTOR')")
-        .antMatchers("/admin/**").access("hasRole('TEACHER') or hasRole('DIRECTOR')")
-        .antMatchers("/db/**").access("hasRole('DIRECTOR')")
+        .antMatchers("/", "/home").permitAll()        
+        .antMatchers("/dashboard/users","/dashboard/users/**").access("hasRole('DIRECTOR')")
+        .antMatchers("/dashboard/admin/**").access("hasRole('TEACHER') or hasRole('DIRECTOR')")
+        .antMatchers("/dashboard/account/**").access("hasRole('ACCOUNTANT') or hasRole('DIRECTOR')")
+        .antMatchers("/dashboard","/dashboard/**").access("hasRole('TEACHER') or hasRole('DIRECTOR') or hasRole('ACCOUNTANT') ")
         
         .and().formLogin().loginPage("/login").successHandler(customSuccessHandler)
         .usernameParameter("ssoId").passwordParameter("password")
-        .and().rememberMe().rememberMeParameter("remember-me").tokenRepository(persistentTokenRepository())
-        .and().csrf()
-        .and().exceptionHandling().accessDeniedPage("/Access_Denied");
+        .and().rememberMe().rememberMeParameter("remember-me").tokenRepository(persistentTokenRepository());
+        /*.and().csrf()*/
   
     }
     @Bean

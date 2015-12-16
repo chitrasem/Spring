@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,43 +28,87 @@ import com.chitra.kms.utils.SSOIdUtil;
 @Controller
 public class MainController { 
 	
+	/**
+	 * user service
+	 */
 	@Autowired
 	UserService userService;
 	
+	/**
+	 * UserProfileService
+	 */
 	@Autowired
 	UserProfileService userProfileService;
 	
-	
+	/**
+	 * SSOIdUtils
+	 */
 	SSOIdUtil sSOIdUtil = new SSOIdUtil();
-
-	@RequestMapping(value="/admin/students", method = RequestMethod.GET)
-	public String showStudent(Model m){
-		m.addAttribute("user", sSOIdUtil.getPrincipal());
-		return "/admin/student";
+	
+	/**
+	 * 
+	 * @param m
+	 * @return
+	 */
+	@RequestMapping(value="/dashboard")
+	public String showDashboard(Model m){
+		m.addAttribute("user", getUser());
+		
+		
+		return "/dashboard/index";
+		
 	}
-    @RequestMapping(value="/home", method = RequestMethod.GET)
-    public String homePage(ModelMap model) {
-    	model.addAttribute("user", sSOIdUtil.getPrincipal());
-        return "/pages/welcome";
-    }
-    
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String adminPage(ModelMap model) {
-        model.addAttribute("user", getPrincipal());
-        return "admin";
-    }
- 
+	
+	@RequestMapping(value="/dashboard/profile", method = RequestMethod.GET)
+	public String showUserProfile(Model m){	
+		
+		User user =  userService.findBySso(sSOIdUtil.getPrincipal());	
+		 
+		
+		//m.addAttribute("user", sSOIdUtil.getUser());
+		m.addAttribute("user", user);
+		
+		return "/dashboard/profile";
+		
+	}
+	
+	/**
+	 * 
+	 * @param m
+	 * @return
+	 */
+
+	@RequestMapping(value="/dashboard/students", method = RequestMethod.GET)
+	public String showStudent(Model m){ 
+		m.addAttribute("user", sSOIdUtil.getPrincipal());
+		return "/dashboard/student";
+	} 
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/db", method = RequestMethod.GET)
     public String dbaPage(ModelMap model) {
-        model.addAttribute("user", getPrincipal());
+        model.addAttribute("user", sSOIdUtil.getPrincipal());
         return "dba";
     }
     
+    /**
+     * 
+     * @return
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage() {
         return "login";
     }
      
+    /**
+     * 
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -75,12 +118,29 @@ public class MainController {
         return "redirect:/login?logout";
     }
  
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
-        model.addAttribute("user", sSOIdUtil.getPrincipal());
-        return "accessDenied";
+        model.addAttribute("user", getUser());
+        return "/accessDenied";
     }
     
+    @RequestMapping(value="/dashboard/users", method = RequestMethod.GET)
+    public String showUsers(ModelMap m){
+        m.addAttribute("user", getUser());
+    	
+    	return "/dashboard/users";
+    }
+    
+    /**
+     * 
+     * @param model
+     * @return
+     */
     @RequestMapping(value="/newUser" , method = RequestMethod.GET)
     public String newRegistration(ModelMap model){
     	User user = new User();
@@ -89,6 +149,13 @@ public class MainController {
     	return "newuser"; 
     }
     
+    /**
+     * 
+     * @param user
+     * @param result
+     * @param model
+     * @return
+     */
     @ResponseBody
     @RequestMapping(value="/newUser", method = RequestMethod.POST)
     public String saveRegistration(@Valid User user,
@@ -108,20 +175,15 @@ public class MainController {
     	
     	return "registerationsuccess";
     }
-    
-     
-    private String getPrincipal(){
-        String userName = null;
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
- 
-        if (principal instanceof UserDetails) {
-            userName = ((UserDetails)principal).getUsername();
-        } else {
-            userName = principal.toString();
-        }
-        return userName;
+    public User getUser(){
+		User user = userService.findBySso(sSOIdUtil.getPrincipal());
+		return user;
     }
     
+    /**
+     * 
+     * @return
+     */
     @ModelAttribute("role")
     public List<UserProfile> initializeProfiles(){
     	return userProfileService.findAll();

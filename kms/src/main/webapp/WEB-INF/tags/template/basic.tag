@@ -11,483 +11,180 @@
         <jsp:invoke fragment="extraHeadContent" />
     </jsp:attribute>
     <jsp:attribute name="navigationContent">
-    
-        
-				<ul class="nav nav-list">
-					<li class="active">
-						<a href="index.html">
-							<i class="menu-icon fa fa-tachometer"></i>
-							<span class="menu-text"> Dashboard </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-desktop"></i>
-							<span class="menu-text">
-								UI &amp; Elements
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="#" class="dropdown-toggle">
-									<i class="menu-icon fa fa-caret-right"></i>
-
-									Layouts
-									<b class="arrow fa fa-angle-down"></b>
-								</a>
-
-								<b class="arrow"></b>
-
-								<ul class="submenu">
-									<li class="">
-										<a href="top-menu.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Top Menu
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="two-menu-1.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Two Menus 1
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="two-menu-2.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Two Menus 2
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="mobile-menu-1.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Default Mobile Menu
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="mobile-menu-2.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Mobile Menu 2
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="mobile-menu-3.html">
-											<i class="menu-icon fa fa-caret-right"></i>
-											Mobile Menu 3
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-								</ul>
-							</li>
-
-							<li class="">
-								<a href="typography.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Typography
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="elements.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Elements
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="buttons.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Buttons &amp; Icons
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="content-slider.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Content Sliders
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="treeview.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Treeview
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="jquery-ui.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									jQuery UI
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="nestable-list.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Nestable Lists
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="#" class="dropdown-toggle">
-									<i class="menu-icon fa fa-caret-right"></i>
-
-									Three Level Menu
-									<b class="arrow fa fa-angle-down"></b>
-								</a>
-
-								<b class="arrow"></b>
-
-								<ul class="submenu">
-									<li class="">
-										<a href="#">
-											<i class="menu-icon fa fa-leaf green"></i>
-											Item #1
-										</a>
-
-										<b class="arrow"></b>
-									</li>
-
-									<li class="">
-										<a href="#" class="dropdown-toggle">
-											<i class="menu-icon fa fa-pencil orange"></i>
-
-											4th level
-											<b class="arrow fa fa-angle-down"></b>
-										</a>
-
-										<b class="arrow"></b>
-
-										<ul class="submenu">
-											<li class="">
-												<a href="#">
-													<i class="menu-icon fa fa-plus purple"></i>
-													Add Product
-												</a>
-
-												<b class="arrow"></b>
-											</li>
-
-											<li class="">
-												<a href="#">
-													<i class="menu-icon fa fa-eye pink"></i>
-													View Products
-												</a>
-
-												<b class="arrow"></b>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Tables </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="tables.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Simple &amp; Dynamic
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="jqgrid.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									jqGrid plugin
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text"> Forms </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="form-elements.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Form Elements
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="form-elements-2.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Form Elements 2
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="form-wizard.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Wizard &amp; Validation
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="wysiwyg.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Wysiwyg &amp; Markdown
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="dropzone.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Dropzone File Upload
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="widgets.html">
-							<i class="menu-icon fa fa-list-alt"></i>
-							<span class="menu-text"> Widgets </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="calendar.html">
-							<i class="menu-icon fa fa-calendar"></i>
-
-							<span class="menu-text">
-								Calendar
-
-								<span class="badge badge-transparent tooltip-error" title="2 Important Events">
-									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-								</span>
-							</span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="gallery.html">
-							<i class="menu-icon fa fa-picture-o"></i>
-							<span class="menu-text"> Gallery </span>
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-tag"></i>
-							<span class="menu-text"> More Pages </span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="profile.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									User Profile
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="inbox.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Inbox
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="pricing.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Pricing Tables
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="invoice.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Invoice
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="timeline.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Timeline
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="email.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Email Templates
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="login.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Login &amp; Register
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-
-					<li class="">
-						<a href="#" class="dropdown-toggle">
-							<i class="menu-icon fa fa-file-o"></i>
-
-							<span class="menu-text">
-								Other Pages
-
-								<span class="badge badge-primary">5</span>
-							</span>
-
-							<b class="arrow fa fa-angle-down"></b>
-						</a>
-
-						<b class="arrow"></b>
-
-						<ul class="submenu">
-							<li class="">
-								<a href="faq.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									FAQ
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="error-404.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Error 404
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="error-500.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Error 500
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="grid.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Grid
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-
-							<li class="">
-								<a href="blank.html">
-									<i class="menu-icon fa fa-caret-right"></i>
-									Blank Page
-								</a>
-
-								<b class="arrow"></b>
-							</li>
-						</ul>
-					</li>
-				</ul><!-- /.nav-list -->
-				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-				</div>
-        
-        <jsp:invoke fragment="extraNavigationContent" />
+    <div class="left side-menu">
+                <div class="sidebar-inner slimscrollleft">
+                    <div class="user-details">
+                        <div class="pull-left">
+                            <img src="<c:url value="/static/images/users/avatar-1.jpg" />" alt="" class="thumb-md img-circle">
+                        </div>
+                        <div class="user-info">
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">${user.firstName}<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<c:url value="/dashboard/profile" />"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-lock"></i> Lock screen</a></li>
+                                    <li><a href="javascript:void(0)"><i class="md md-settings-power"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                            
+							<c:forEach var="user" items="${user.userProfiles}">
+                           		<p class="text-muted m-0">${user.type} </p>
+							 </c:forEach>
+                        </div>
+                        
+                    </div>
+                    <!--- Divider -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            <li>
+                                <a href="<c:url value="/dashboard"/>" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
+                            </li>
+
+                            <li>
+                                <a href="<c:url value="/dashboard/users"/>" class="waves-effect"><i class="md md-event"></i><span> Users </span></a>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-mail"></i><span> Mail </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="inbox.html">Inbox</a></li>
+                                    <li><a href="email-compose.html">Compose Mail</a></li>
+                                    <li><a href="email-read.html">View Mail</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="calendar.html" class="waves-effect"><i class="md md-event"></i><span> Calendar </span></a>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-palette"></i> <span> Elements </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="typography.html">Typography</a></li>
+                                    <li><a href="buttons.html">Buttons</a></li>
+                                    <li><a href="panels.html">Panels</a></li>
+                                    <li><a href="checkbox-radio.html">Checkboxs-Radios</a></li>
+                                    <li><a href="tabs-accordions.html">Tabs &amp; Accordions</a></li>
+                                    <li><a href="modals.html">Modals</a></li>
+                                    <li><a href="bootstrap-ui.html">BS Elements</a></li>
+                                    <li><a href="progressbars.html">Progress Bars</a></li>
+                                    <li><a href="notification.html">Notification</a></li>
+                                    <li><a href="sweet-alert.html">Sweet-Alert</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-invert-colors-on"></i><span> Components </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="grid.html">Grid</a></li>
+                                    <li><a href="portlets.html">Portlets</a></li>
+                                    <li><a href="widgets.html">Widgets</a></li>
+                                    <li><a href="nestable-list.html">Nesteble</a></li>
+                                    <li><a href="ui-sliders.html">Sliders </a></li>
+                                    <li><a href="gallery.html">Gallery </a></li>
+                                    <li><a href="pricing.html">Pricing Table </a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-redeem"></i> <span> Icons </span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="material-icon.html">Material Design</a></li>
+                                    <li><a href="ion-icons.html">Ion Icons</a></li>
+                                    <li><a href="font-awesome.html">Font awesome</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-now-widgets"></i><span> Forms </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="form-elements.html">General Elements</a></li>
+                                    <li><a href="form-validation.html">Form Validation</a></li>
+                                    <li><a href="form-advanced.html">Advanced Form</a></li>
+                                    <li><a href="form-wizard.html">Form Wizard</a></li>
+                                    <li><a href="form-editor.html">WYSIWYG Editor</a></li>
+                                    <li><a href="code-editor.html">Code Editors</a></li>
+                                    <li><a href="form-uploads.html">Multiple File Upload</a></li>
+                                    <li><a href="form-xeditable.html">X-editable</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-view-list"></i><span> Data Tables </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="tables.html">Basic Tables</a></li>
+                                    <li><a href="table-datatable.html">Data Table</a></li>
+                                    <li><a href="tables-editable.html">Editable Table</a></li>
+                                    <li><a href="responsive-table.html">Responsive Table</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-poll"></i><span> Charts </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="morris-chart.html">Morris Chart</a></li>
+                                    <li><a href="chartjs.html">Chartjs</a></li>
+                                    <li><a href="flot-chart.html">Flot Chart</a></li>
+                                    <li><a href="peity-chart.html">Peity Charts</a></li>
+                                    <li><a href="charts-sparkline.html">Sparkline Charts</a></li>
+                                    <li><a href="chart-radial.html">Radial charts</a></li>
+                                    <li><a href="other-chart.html">Other Chart</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect"><i class="md md-place"></i><span> Maps </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="gmap.html"> Google Map</a></li>
+                                    <li><a href="vector-map.html"> Vector Map</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="#" class="waves-effect active"><i class="md md-pages"></i><span> Pages </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="timeline.html">Timeline</a></li>
+                                    <li><a href="invoice.html">Invoice</a></li>
+                                    <li><a href="email-template.html">Email template</a></li>
+                                    <li><a href="contact.html">Contact-list</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="recoverpw.html">Recover Password</a></li>
+                                    <li><a href="lock-screen.html">Lock Screen</a></li>
+                                    <li class="active"><a href="blank.html">Blank Page</a></li>
+                                    <li><a href="maintenance.html">Maintenance</a></li>
+                                    <li><a href="coming-soon.html">Coming-soon</a></li>
+                                    <li><a href="404.html">404 Error</a></li>
+                                    <li><a href="404_alt.html">404 alt</a></li>
+                                    <li><a href="500.html">500 Error</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="md md-share"></i><span>Multi Level </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                                <ul>
+                                    <li class="has_sub">
+                                        <a href="javascript:void(0);" class="waves-effect"><span>Menu Level 1.1</span> <span class="pull-right"><i class="md md-add"></i></span></a>
+                                        <ul style="">
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.1</span></a></li>
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.2</span></a></li>
+                                            <li><a href="javascript:void(0);"><span>Menu Level 2.3</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);"><span>Menu Level 1.2</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+     <jsp:invoke fragment="extraNavigationContent" />
     </jsp:attribute>
     <jsp:body>
         <jsp:doBody />

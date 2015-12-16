@@ -1,9 +1,22 @@
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>AccessDenied page</title>
-</head>
-<body>
-    Dear <strong>${user}</strong>, You are not authorized to access this page
-    <a href="<c:url value="/logout" />">Logout</a>
-</body>
+<template:basic htmlTitle="Profile" bodyTitle="Profile">
+	<!-- ============================================================== -->
+	<!-- Start right Content here -->
+	<div class="content">
+		<div class="container">
+			<div class="alert alert-danger">
+				Dear <strong>${user}</strong> you don't have permission to access this file!
+			</div>
+
+			<!-- Pls Remove -->
+			<div style="height: 600px;"></div>
+
+
+		</div>
+		<!-- container -->
+
+	</div>
+	<!-- content -->
+
+
+
+</template:basic>
